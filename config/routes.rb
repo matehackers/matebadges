@@ -1,7 +1,7 @@
 Matebadges::Application.routes.draw do
   resources :users
 
-  mount BadgesEngine::Engine => '/badges', :as => 'badges'
+  mount BadgesEngine::Engine => '/'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
