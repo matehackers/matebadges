@@ -3,7 +3,7 @@
 <script type="text/javascript">
 function issue_badge(url)
 {
-	OpenBadges.issue([url], function(errors, successes) {alert(errors); alert(successes);});
+	OpenBadges.issue([url], function(errors, successes) {alert(JSON.stringify(errors)); alert(JSON.stringify(successes));});
 }
 </script>
 
