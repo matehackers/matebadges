@@ -1,0 +1,17 @@
+<script type="text/javascript" src="http://beta.openbadges.org/issuer.js"></script>
+
+<script type="text/javascript">
+function issue_badge(url)
+{
+	OpenBadges.issue([url], function(errors, successes) {alert(errors); alert(successes);});
+}
+</script>
+
+<ul>
+<% @assertions.each do |assertion| %>
+	<li>
+		<%= assertion.badge.name %> | <%= assertion.user.email %> |
+		<a href="#" onClick="issue_badge('<%=assertion.baking_callback_url%>')">Issue</a>
+	</li>
+<% end %>
+</ul>

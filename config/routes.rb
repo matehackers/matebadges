@@ -1,6 +1,8 @@
 Matebadges::Application.routes.draw do
   resources :users
 
+  match 'home' => 'home#index'
+
   mount BadgesEngine::Engine => '/'
 
   # The priority is based upon order of creation:

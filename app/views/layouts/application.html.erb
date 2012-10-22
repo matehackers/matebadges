@@ -5,13 +5,8 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
-
-  <script src="http://beta.openbadges.org/issuer.js"></script>
-
 </head>
 <body>
-
-<a href="#" onClick="OpenBadges.issue(['localhost:3000/badges/a/1/HsjEdDAdcap3FlbPWBzSKw.json'], function(errors, successes) {alert(errors); alert(successes);});">Issue</a>
 
 <%= yield %>
 
