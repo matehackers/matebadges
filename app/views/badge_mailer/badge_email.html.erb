@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <script type="text/javascript" src="http://beta.openbadges.org/issuer.js"></script>
+    <script type="text/javascript">
+      function issue_badge(url)
+      {
+        OpenBadges.issue([url], function(errors, successes) {});
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Yeeeah!</h1>
+    <p>
+      Congratulations on finishing the <%= @title %> course!
+    </p>
+    <p>
+      You can redeem your badge and add it to your OpenBadge by clicking <a href="#" onClick="issue_badge('<%=baking_url @assertion%>')">here</a>.
+    </p>
+    <p>
+      You can get the raw json file <%= link_to("here", baking_url(@assertion)) %>, if you like that kind of stuff.
+    </p>
+    <p><strong>Thanks for participating in the course and hope to see you again!</strong></p>
+  </body>
+</html>
