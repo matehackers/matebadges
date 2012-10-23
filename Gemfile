@@ -9,6 +9,8 @@ gem 'sqlite3'
 
 gem 'json'
 
+gem "bcrypt-ruby"
+
 gem 'devise'
 
 # Gems used only for assets and not required
