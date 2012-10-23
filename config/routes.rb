@@ -1,9 +1,13 @@
 Matebadges::Application.routes.draw do
+  devise_for :admins
+
   resources :users
 
   match 'home' => 'home#index'
 
-  mount BadgesEngine::Engine => '/'
+  authenticate :admin do
+    mount BadgesEngine::Engine => '/'
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
