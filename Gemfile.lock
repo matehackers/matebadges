@@ -131,6 +131,7 @@ PLATFORMS
 
 DEPENDENCIES
   badges_engine!
+  bcrypt-ruby
   coffee-rails (~> 3.2.1)
   devise
   jquery-rails
