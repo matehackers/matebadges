@@ -4,7 +4,9 @@ Matebadges::Application.routes.draw do
 
   authenticate :admin do
     resources :users
-    match 'issue' => 'home#index'
+    match '/' => 'home#index'
+    match '/award' => 'home#award'
+    match '/issue' => 'home#issue'
     mount BadgesEngine::Engine => '/interface'
   end
 
