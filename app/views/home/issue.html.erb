@@ -1,0 +1,23 @@
+<p> Gimme the emails of the approved students: </p>
+
+<%= form_tag(:url => award_path, :controller => "home", :action => "award", :method => "post") do %>
+
+  <div class="field">
+    <%= label :emails, 'emails' %><br />
+    <%= text_area_tag :emails %>
+  </div>
+
+  <div class="field">
+    <%= label :badge_id, 'badge' %><br />
+    <%= select_tag :badge_id,  options_for_select(@badges) %>
+  </div>
+
+  <div class="field">
+    <%= label :evidence, 'evidence' %> (url)<br />
+    <%= text_field_tag :evidence %>
+  </div>
+
+  <div class="actions">
+    <%= submit_tag("Go!") %>
+  </div>
+<% end %>

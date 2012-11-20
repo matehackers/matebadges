@@ -1,0 +1,22 @@
+
+<script type="text/javascript" src="http://beta.openbadges.org/issuer.js"></script>
+<script type="text/javascript">
+  function issue_badge(url)
+  {
+    OpenBadges.issue([url], function(errors, successes) {});
+  }
+</script>
+
+<img src="<%= @assertion.badge.image %>">
+
+<p>
+  Congratulations on finishing the "<%= @assertion.badge.name %>" course!
+</p>
+
+<h2>
+  <a href="#" onClick="issue_badge('<%=baking_url @assertion%>')">Redeem Badge</a>
+</h2>
+
+<h2>
+  <%= link_to("JSON", baking_url(@assertion)) %>
+</h2>

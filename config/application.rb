@@ -58,5 +58,20 @@ module Matebadges
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    config.action_mailer.delivery_method = :smtp
+
+    ActionMailer::Base.smtp_settings = {
+      :address  => 'smtp.gmail.com',
+      :port  => 587,
+      :domain => 'matehackers.org',
+      :user_name  => IO.read('mail_user'),
+      :password  => IO.read('mail_password'),
+      :authentication  => 'plain',
+      :enable_starttls_auto => true
+    }
+
+    config.action_mailer.raise_delivery_errors = true
+
   end
 end

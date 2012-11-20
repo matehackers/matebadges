@@ -10,5 +10,5 @@ Matebadges::Application.routes.draw do
     mount BadgesEngine::Engine => '/interface'
   end
 
-  match 'matebadges/:id/:token.json' => 'badge_server#bake_callback', :via => :get, :defaults => { :format => 'json' }, :as => :badge_server
+  match 'matebadges/:id/:token' => 'badge_server#bake_callback', :via => :get, :defaults => { :format => 'json' }, :as => :badge_server
 end

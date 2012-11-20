@@ -14,6 +14,8 @@ class HomeController < ApplicationController
         @badge = BadgesEngine::Badge.find(params[:badge_id])
 
         emails = params[:emails].split(/[;,]/)
+        assertions = []
+        errors = false
 
         emails.each do |email|
             ass = BadgesEngine::Assertion.new(:evidence => params[:evidence],
@@ -21,10 +23,21 @@ class HomeController < ApplicationController
 
             ass.user = User.find_or_create_by_email(email)
             ass.badge = @badge
-            ass.save
+
+            assertions << ass
+
+            if not ass.save
+                errors = true
+            end
         end
 
-        redirect_to issue_path, :notice => 'Done, users registered'
+        if errors
+            redirect_to issue_path, :notice => 'Double check the info dude'
+        else
+            assertions.each { |ass| BadgeMailer.badge_email(ass).deliver }
+            redirect_to issue_path, :notice => 'Done, users registered'
+        end
+
     end
 
     def issue
