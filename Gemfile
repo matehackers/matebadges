@@ -35,3 +35,7 @@ gem 'delayed_job_active_record', :git => 'git://github.com/collectiveidea/delaye
 gem 'delayed_job', :git => 'git://github.com/collectiveidea/delayed_job.git'
 
 gem 'daemons'
+
+gem 'capistrano'
+
+gem 'rvm-capistrano'
