@@ -7,6 +7,7 @@ class BadgeMailer < ActionMailer::Base
     @user = assertion.user
     @title = assertion.badge.name
     @assertion = assertion
-    mail(:to => @user.email, :subject => "Here's your \"#{@title}\" badge!").deliver
+    mail(:to => @user.email, :subject => "Here's your \"#{@title}\" badge!")
   end
+
 end

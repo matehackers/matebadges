@@ -34,7 +34,7 @@ class HomeController < ApplicationController
         if errors
             redirect_to issue_path, :notice => 'Double check the info dude'
         else
-            assertions.each { |ass| BadgeMailer.badge_email(ass).deliver }
+            assertions.each { |ass| BadgeMailer.delay.badge_email(ass) }
             redirect_to issue_path, :notice => 'Done, users registered'
         end
 
