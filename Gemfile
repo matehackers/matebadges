@@ -27,7 +27,7 @@ end
 
 gem 'jquery-rails'
 
-gem 'badges_engine', :path => 'vendor/badges_engine'
+gem 'badges_engine', :git => 'git@github.com:matehackers/badges_engine.git'
 
 gem 'valid_email'
 
